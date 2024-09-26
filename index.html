@@ -9,6 +9,7 @@
     </style>
     <script src="https://d3js.org/d3.v3.min.js" defer></script>
     <script defer>
+        document.getElementById("hi").textContent="Hallow";
         d3.selectAll('circle')
             .style('fill','orange')
             .attr('r',function(){
@@ -26,6 +27,6 @@
             <circle cx="480" />
         </g>
     </svg>
-    
+    <h1 id="hi">hiya</h1>
 </body>
 </html>
