@@ -10,20 +10,27 @@
     <script src="https://d3js.org/d3.v3.min.js" defer></script>
 </head>
 <body>
-    <svg width="760" height="140">
-        <g transform="translate(70,70)">
-            <circle/>
-            <circle cx="120" />
-            <circle cx="240" />
-            <circle cx="360" />
-            <circle cx="480" />
+    <svg width="600" height="100">
+        <g class="chart" transform="translate(50, 0)">
         </g>
-    </svg>
+      </svg>
     <h1 id="hi">hiya</h1>
-    <script src="https://d3js.org/d3.v3.min.js" defer></script>
-    <script defer>
-        document.getElementById("hi").textContent="Hallow";
-        d3.selectAll('#hi').style('color','orange');
+    <script src="https://d3js.org/d3.v3.min.js"></script>
+    <script>
+        var myData = [40, 10, 20, 60, 30];
+
+d3.select('.chart')
+  .selectAll('circle')
+  .data(myData)
+  .join('circle')
+  .attr('cx', function(d, i) {
+    return i * 100;
+  })
+  .attr('cy', 50)
+  .attr('r', function(d) {
+    return 0.5 * d;
+  })
+  .style('fill', 'orange');
     </script>
 </body>
 </html>
